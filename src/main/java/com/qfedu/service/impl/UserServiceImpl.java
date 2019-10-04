@@ -53,4 +53,8 @@ public class UserServiceImpl implements UserService {
     public int updateInformation(User user) {
        return userMapper.updateInformation(user);
     }
+
+    public int updateRealMessage(User user) {
+        return userMapper.updateRealMessage(user);
+    }
 }

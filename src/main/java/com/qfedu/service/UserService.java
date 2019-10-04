@@ -19,4 +19,6 @@ public interface UserService {
     User selectShowUserByEmail(String email);
 
     int updateInformation(User user);
+
+    int updateRealMessage(User user);
 }

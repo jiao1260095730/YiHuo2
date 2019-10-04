@@ -202,7 +202,6 @@ public class UserController {
 
     /**
      * 完善个人资料
-     *
      * @param session 获取邮箱
      * @param user    实体User
      * @return 返回成功或失败
@@ -218,13 +217,15 @@ public class UserController {
             @ApiImplicitParam(name = "address", value = "地区", required = true, dataType = "String"),
             @ApiImplicitParam(name = "profession", value = "职业", required = true, dataType = "String"),
             @ApiImplicitParam(name = "trade", value = "行业", required = true, dataType = "String"),
-            @ApiImplicitParam(name = "education", value = "学历", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "education", value = "学历", required = true, dataType = "String")
     })
     public String updateInformation(HttpSession session, User user) {
         user.setEmail((String) session.getAttribute("email"));
         int count = userService.updateInformation(user);
-        System.out.println(count);
-        return "success";
+        if (count > 0) {
+            return "success";
+        }
+        return "fail";
     }
 
     @RequestMapping(value = "/showUser", method = RequestMethod.POST)
@@ -248,5 +249,27 @@ public class UserController {
     public String login( HttpSession session) {
         session.removeAttribute("email");
         return "success";
+    }
+
+    @RequestMapping(value = "/updateRealMessage",method = RequestMethod.POST)
+    @ResponseBody
+    @ApiOperation(value = "修改个人信息的真实资料")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "realName", value = "真实姓名", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "weiXin", value = "微信", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "schoolTag", value = "毕业学校", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "major", value = "专业", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "beGoodAt", value = "擅长领域", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "experience", value = "经历", required = true, dataType = "String")
+    })
+    public String updateRealMessage(HttpSession session,User user) {
+
+        user.setEmail((String) session.getAttribute("email"));
+        int count = userService.updateRealMessage(user);
+        if (count > 0) {
+            return "success";
+        }
+        return "fail";
+
     }
 }
