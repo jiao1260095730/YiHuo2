@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.mapper.UserMapper">
+    <resultMap id="userMap" type="user" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="gender" property="gender" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="head_img_url" property="headImgUrl" jdbcType="VARCHAR" />
+        <result column="info" property="info" jdbcType="VARCHAR" />
+        <result column="bg_img_url" property="bgImgUrl" jdbcType="VARCHAR" />
+        <result column="validate_num" property="validateNum" jdbcType="VARCHAR" />
+        <result column="huo_zan" property="huoZan" jdbcType="INTEGER" />
+        <result column="fans" property="fans" jdbcType="INTEGER" />
+        <result column="guan_zhu_num" property="guanZhuNum" jdbcType="INTEGER" />
+        <result column="vip" property="vip" jdbcType="VARCHAR" />
+        <result column="buy_course_id" property="buyCourseId" jdbcType="INTEGER" />
+        <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="profession" property="profession" jdbcType="VARCHAR" />
+        <result column="trade" property="trade" jdbcType="VARCHAR" />
+        <result column="education" property="education" jdbcType="VARCHAR" />
+    </resultMap>
+    <update id="register" parameterType="user">
+        update user set password=#{password} where email = #{email} and validate_num=#{validateNum}
+    </update>
+
+    <update id="updatePasswordByEmail" parameterType="user">
+        update user set password=#{password} where email = #{email}
+    </update>
+
+    <insert id="insertValidateNum" parameterType="user">
+        insert into user (email, validate_num) values (#{email}, #{validateNum})
+    </insert>
+
+    <select id="selectUserByUserNameAndPassword" parameterType="user" resultType="int">
+        select count(1) from user where email=#{email} and password=#{password}
+    </select>
+
+    <select id="selectVerify" parameterType="user" resultType="int">
+        select count(1) from user where email = #{email}
+    </select>
+
+    <select id="selectUserByValidateNumAndEmail" resultType="java.lang.Integer" parameterType="user">
+        select count(1) from user where email = #{email} and validate_num = #{validateNum}
+    </select>
+    <update id="updateInformation" parameterType="com.qfedu.entry.User" >
+    update user
+    set
+      user_name = #{userName,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      trade = #{trade,jdbcType=VARCHAR},
+      education = #{education,jdbcType=VARCHAR}
+    where email = #{email,jdbcType=VARCHAR}
+  </update>
+
+    <select id="selectShowUserByEmail" parameterType="user" resultMap="userMap">
+        select * from user where email = #{email}
+    </select>
+</mapper>
