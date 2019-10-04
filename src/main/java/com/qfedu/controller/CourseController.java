@@ -1,10 +1,13 @@
 package com.qfedu.controller;
 
 import com.qfedu.entry.Course;
+import com.qfedu.entry.Label;
 import com.qfedu.entry.Video;
 import com.qfedu.service.CourseService;
+import com.qfedu.service.LabelService;
 import com.qfedu.utils.JsonUtils;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +25,8 @@ public class CourseController {
 
     @Autowired
     CourseService courseService;
+    @Autowired
+    LabelService labelService;
 
     @ResponseBody
     @RequestMapping(value = "/showList",method = RequestMethod.POST)
@@ -30,5 +35,20 @@ public class CourseController {
         List<Course> courseList = courseService.selectAllCourse();
         model.addAttribute("courseList", courseList);
         return JsonUtils.objectToJson(courseList);
+    }
+
+    @RequestMapping(value = "listByLables",method = {RequestMethod.POST,RequestMethod.GET})
+    @ApiOperation(value = "点击标签查询")
+    @ApiImplicitParam(name = "labelName",value = "点击的标签",required = true,dataType = "String")
+    public void listByLabels(String labelName,Model model) {
+        //获取标签id
+        int labelId = labelService.getIdByName(labelName);
+        Label label = new Label();
+        label.setId(labelId);
+        label.setName(labelName);
+        //查询
+        List<Course> courseList = courseService.selectCourseListByLabel(label);
+
+        model.addAttribute("courseList",courseList);
     }
 }

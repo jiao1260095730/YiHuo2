@@ -17,6 +17,14 @@
     <select id="selectAllCourse" resultMap="courseMap">
         select * from course;
     </select>
+    <select id="selectCourseListByLabel" resultMap="courseMap">
+        select * from course c where
+        c.course_name like concat('%',#{name},'%')
+        or
+        c.course_desc like concat('%',#{name},'%')
+        or
+        find_in_set(#{id},c.label_id)
+    </select>
 
 
 </mapper>

@@ -1,6 +1,7 @@
 package com.qfedu.service.impl;
 
 import com.qfedu.entry.Course;
+import com.qfedu.entry.Label;
 import com.qfedu.mapper.CourseMapper;
 import com.qfedu.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +18,9 @@ public class CourseServiceImpl implements CourseService {
 
     public List<Course> selectAllCourse() {
         return courseMapper.selectAllCourse();
+    }
+
+    public List<Course> selectCourseListByLabel(Label label) {
+        return courseMapper.selectCourseListByLabel(label);
     }
 }
