@@ -1,7 +1,8 @@
 package com.qfedu.controller;
 
+import com.qfedu.entry.Course;
 import com.qfedu.entry.Video;
-import com.qfedu.service.VideoService;
+import com.qfedu.service.CourseService;
 import com.qfedu.utils.JsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -15,21 +16,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/video")
-@Api(tags = "该类实现所有关于video的功能")
-public class VideoController {
+@RequestMapping("/course")
+@Api(tags = "该类实现所有关于course的功能")
+public class CourseController {
 
     @Autowired
-    VideoService videoService;
-
-
+    CourseService courseService;
 
     @ResponseBody
     @RequestMapping(value = "/showList",method = RequestMethod.POST)
-    @ApiOperation(value = "该方法用来展示视频列表")
-    public String videoList(Model model) {
-        List<Video> videoList = videoService.selectAllVideo();
-        model.addAttribute("videoList", videoList);
-        return JsonUtils.objectToJson(videoList);
+    @ApiOperation(value = "该方法用来展示课程列表")
+    public String courseList(Model model) {
+        List<Course> courseList = courseService.selectAllCourse();
+        model.addAttribute("courseList", courseList);
+        return JsonUtils.objectToJson(courseList);
     }
 }
