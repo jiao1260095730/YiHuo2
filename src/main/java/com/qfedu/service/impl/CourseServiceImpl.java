@@ -20,6 +20,10 @@ public class CourseServiceImpl implements CourseService {
         return courseMapper.selectAllCourse();
     }
 
+    public Course getCourseById(Integer id) {
+        return courseMapper.getCourseById(id);
+    }
+
     public List<Course> selectCourseListByLabel(Label label) {
         return courseMapper.selectCourseListByLabel(label);
     }

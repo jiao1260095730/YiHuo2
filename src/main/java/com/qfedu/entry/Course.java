@@ -19,4 +19,6 @@ public class Course {
     private String labelId;
 
     private Integer typeId;
+
+    private String courseShowImg;
 }
