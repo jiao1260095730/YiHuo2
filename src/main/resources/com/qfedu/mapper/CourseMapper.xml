@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.mapper.CourseMapper">
+
+    <resultMap id="courseMap" type="course" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="course_name" property="courseName" jdbcType="VARCHAR" />
+        <result column="course_desc" property="courseDesc" jdbcType="VARCHAR" />
+        <result column="buy_num" property="buyNum" jdbcType="VARCHAR" />
+        <result column="teacher_id" property="teacherId" jdbcType="INTEGER" />
+        <result column="label_id" property="labelId" jdbcType="VARCHAR" />
+        <result column="type_id" property="typeId" jdbcType="INTEGER" />
+    </resultMap>
+
+    <select id="selectAllCourse" resultMap="courseMap">
+        select * from course;
+    </select>
+
+
+</mapper>
