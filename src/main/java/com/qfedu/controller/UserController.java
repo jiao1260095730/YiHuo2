@@ -204,7 +204,7 @@ public class UserController {
      * 完善个人资料
      * @param session 获取邮箱
      * @param user    实体User
-     * @return 返回成功或失败
+     * @return 成功返回success ，失败返回 fail
      */
     @RequestMapping(value = "updateInformation", method = RequestMethod.POST)
     @ResponseBody
@@ -251,6 +251,12 @@ public class UserController {
         return "success";
     }
 
+    /**
+     * 修改个人信息的真实资料
+     * @param session 获取session中的email
+     * @param user 实体类user
+     * @return 成功返回 success ，失败返回 fail
+     */
     @RequestMapping(value = "/updateRealMessage",method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "修改个人信息的真实资料")
