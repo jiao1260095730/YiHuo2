@@ -236,4 +236,17 @@ public class UserController {
         model.addAttribute("user", user);
         return JsonUtils.objectToJson(user);
     }
+
+    /**
+     *  退出登录
+     * @param session 从页面的得到的邮箱账号
+     * @return 返回登录初始页面，目前测试为success；
+     */
+    @RequestMapping(value = "/exit", method = RequestMethod.POST)
+    @ResponseBody
+    @ApiOperation(value = "退出登录")
+    public String login( HttpSession session) {
+        session.removeAttribute("email");
+        return "success";
+    }
 }
