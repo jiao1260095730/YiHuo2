@@ -37,17 +37,10 @@ public class CourseController {
         return JsonUtils.objectToJson(courseList);
     }
 
-    @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST)
-    @ResponseBody
-    @ApiOperation(value = "该方法用来展示遇见中的课程")
-    public String showOneCourse(Integer id, Model model) {
-        Course course = courseService.getCourseById(id);
-        model.addAttribute("course", course);
-        return JsonUtils.objectToJson(course);
-    }
 
-    @RequestMapping(value = "listByLables",method = {RequestMethod.POST,RequestMethod.GET})
-    @ApiOperation(value = "点击标签查询")
+
+    @RequestMapping(value = "listByLabels",method = {RequestMethod.POST,RequestMethod.GET})
+    @ApiOperation(value = "点击课程标签查询")
     @ApiImplicitParam(name = "labelName",value = "点击的标签",required = true,dataType = "String")
     public void listByLabels(String labelName,Model model) {
         //获取标签id
