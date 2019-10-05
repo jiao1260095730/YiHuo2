@@ -30,7 +30,4 @@ public class CommunityController {
         return JsonUtils.objectToJson(teacherList);
     }
 
-
-
-
 }

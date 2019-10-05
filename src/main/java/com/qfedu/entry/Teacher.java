@@ -19,4 +19,7 @@ public class Teacher {
     private String teacherHeadImg;
 
     private String teacherShowImg;
+
+    private String teacherIntroduction;
+
 }
