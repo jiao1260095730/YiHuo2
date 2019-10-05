@@ -2,8 +2,10 @@ package com.qfedu.controller;
 
 import com.qfedu.entry.Course;
 import com.qfedu.entry.Label;
+import com.qfedu.entry.Teacher;
 import com.qfedu.service.CourseService;
 import com.qfedu.service.LabelService;
+import com.qfedu.service.TeacherService;
 import com.qfedu.utils.JsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -26,7 +28,8 @@ public class CourseController {
     CourseService courseService;
     @Autowired
     LabelService labelService;
-
+    @Autowired
+    TeacherService teacherService;
 
     @RequestMapping(value = "/showList", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
@@ -41,7 +44,7 @@ public class CourseController {
 
     @RequestMapping(value = "/listByLabels",method = {RequestMethod.POST,RequestMethod.GET},produces = "application/json;charset=UTF-8")
     @ResponseBody
-    @ApiOperation(value = "点击标签查询（前端传来标签的name）")
+    @ApiOperation(value = "点击标签查询课程（前端传来标签的name）")
     @ApiImplicitParam(name = "labelName",value = "点击的标签",required = true,dataType = "String")
     public String listByLabels(String labelName) {
         //获取标签id
@@ -65,5 +68,24 @@ public class CourseController {
     public String queryCourse(String queryText) {
         List<Course> courseList = courseService.selectCourseListByqueryText(queryText);
         return JsonUtils.objectToJson(courseList);
+    }
+
+    @RequestMapping(value = "/guessYouLike",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    @ApiOperation(value = "传输 “猜你喜欢” 课程列表给前端")
+    public String guessYouLike() {
+        List<Course> courseList = courseService.selectGuessLikeCourseList();
+        return JsonUtils.objectToJson(courseList);
+    }
+
+    @RequestMapping(value = "/showTeacher",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    @ApiOperation(value = "首页 “艺伙名师集” 需要的老师数据")
+    @ApiImplicitParam(name = "grade",value = "根据老师不同的级别，前端传回不同的grade的id，返回相应级别的老师数据",
+            required = true,dataType = "String")
+    public String showTeacherListOnHomePage(String grade) {
+
+        List<Teacher> teacherList = teacherService.selectTeachersByGrade(grade);
+        return JsonUtils.objectToJson(teacherList);
     }
 }

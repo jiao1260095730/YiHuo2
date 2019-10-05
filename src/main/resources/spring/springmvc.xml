@@ -34,7 +34,7 @@
         </property>
     </bean>
 
-    <bean class="com.qfedu.controller.MySwaggerConfig" />
+    <bean class="com.qfedu.MySwaggerConfig" />
     <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
     <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
 

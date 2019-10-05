@@ -31,4 +31,8 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> selectCourseListByqueryText(String queryText) {
         return courseMapper.selectCourseListByqueryText(queryText);
     }
+
+    public List<Course> selectGuessLikeCourseList() {
+        return courseMapper.selectAllCourseOrderByIdDesc();
+    }
 }

@@ -1,4 +1,4 @@
-package com.qfedu.controller;
+package com.qfedu;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

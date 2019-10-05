@@ -13,4 +13,6 @@ public interface CourseMapper {
     List<Course> selectCourseListByLabel(Label label);
 
     List<Course> selectCourseListByqueryText(String queryText);
+
+    List<Course> selectAllCourseOrderByIdDesc();
 }
