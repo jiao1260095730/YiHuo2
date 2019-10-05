@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -32,14 +31,13 @@ public class CourseController {
     @RequestMapping(value = "/showList", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "该方法用来展示课程列表")
-    public String courseList(Model model, HttpServletResponse response) {
+    public String courseList(Model model) {
         List<Course> courseList = courseService.selectAllCourse();
-        model.addAttribute("courseList", courseList);
 
         return JsonUtils.objectToJson(courseList);
     }
 
-    @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "该方法用来展示遇见中的课程")
     public String showOneCourse(Integer id, Model model) {
