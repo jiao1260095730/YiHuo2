@@ -7,119 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ca50af5b-754c-49fc-8d36-0a6a64d071da" name="Default Changelist" comment="焦斌-YiHuo2.0，非聚合项目">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/qfedu/entry/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/META-INF/YiHuo2.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/controller/MySwaggerConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/controller/VideoController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/entry/Label.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/entry/Teacher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/entry/TeacherGrade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/entry/Type.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/entry/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/entry/Video.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/mapper/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/mapper/VideoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/mapper/VideoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/service/VideoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/service/impl/VideoServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/utils/InfoUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/utils/JsonUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/utils/MailUtils$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/utils/MailUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/com/qfedu/utils/UUIDUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/dbconfig/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/info.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/spring/applicationContext-dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/spring/applicationContext-service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/classes/spring/springmvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/activation-1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/aspectjweaver-1.6.8.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/byte-buddy-1.8.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/c3p0-0.9.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/classmate-1.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/commons-fileupload-1.3.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/commons-io-2.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/druid-1.0.9.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/guava-20.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.9.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.9.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.9.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/jsqlparser-1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/log4j-1.2.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/lombok-1.16.18.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/mail-1.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/mapstruct-1.2.0.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/mybatis-3.4.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/mybatis-spring-1.3.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-5.1.46.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/pagehelper-5.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-1.6.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-aop-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-beans-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-context-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-core-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-expression-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-jcl-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-jdbc-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-plugin-core-1.2.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-plugin-metadata-1.2.0.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-tx-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-web-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/spring-webmvc-5.0.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/springfox-core-2.9.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/springfox-schema-2.9.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/springfox-spi-2.9.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/springfox-spring-web-2.9.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/springfox-swagger-common-2.9.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/springfox-swagger-ui-2.9.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/springfox-swagger2-2.9.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/swagger-annotations-1.5.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/lib/swagger-models-1.5.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/YiHuo-2-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/YiHuo2.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/controller/MySwaggerConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/controller/VideoController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/entry/Label.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/entry/Teacher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/entry/TeacherGrade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/entry/Type.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/entry/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/entry/Video.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/mapper/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/mapper/VideoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/mapper/VideoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/service/VideoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/service/impl/VideoServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/utils/InfoUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/utils/JsonUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/utils/MailUtils$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/utils/MailUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/qfedu/utils/UUIDUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/dbconfig/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/info.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/spring/applicationContext-dao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/spring/applicationContext-service.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/spring/springmvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qfedu/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qfedu/controller/CourseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qfedu/mapper/VideoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qfedu/mapper/CourseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qfedu/service/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qfedu/service/CourseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qfedu/service/impl/VideoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qfedu/service/impl/CourseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/VideoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/CourseMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -132,17 +22,30 @@
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/controller/CourseController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/mapper/CommunityMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="31" column="54" lean-forward="true" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+            <state relative-caret-position="108">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,57 +54,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/service/CourseService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/CommunityMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/service/impl/CourseServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-                <element signature="e#484#485#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/CourseMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/entry/Course.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="295">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -209,38 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/mapper/CourseMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/entry/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/service/impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4368">
-              <caret line="182" column="9" lean-forward="true" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
+            <state relative-caret-position="72">
+              <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -270,6 +96,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qfedu/service/CourseService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/CourseMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qfedu/mapper/CourseMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/CommunityMapper.xml" />
       </list>
     </option>
   </component>
@@ -308,7 +135,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -413,10 +239,34 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="YiHuo2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YiHuo2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YiHuo2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YiHuo2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="YiHuo2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="YiHuo2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -438,8 +288,12 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\resources\com\qfedu" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\utils" />
+      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\controller" />
+      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\service" />
+      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\mapper" />
+      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\entry" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.qfedu.entry" />
@@ -447,12 +301,8 @@
       <recent name="com.qfedu.service.impl" />
       <recent name="com.qfedu.mapper" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\utils" />
-      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\controller" />
-      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\service" />
-      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\mapper" />
-      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\java\com\qfedu\entry" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\QFJava\ThirdStage\project\YiHuo2\src\main\resources\com\qfedu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -469,7 +319,6 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 8.5.41" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.41" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/YiHuo2/" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
@@ -587,6 +436,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570171624682</updated>
       <workItem from="1570171627517" duration="2466000" />
+      <workItem from="1570242544477" duration="482000" />
     </task>
     <task id="LOCAL-00001" summary="焦斌-YiHuo2.0，非聚合项目">
       <created>1570172718919</created>
@@ -609,37 +459,31 @@
       <option name="project" value="LOCAL" />
       <updated>1570173268392</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="白天明-社区1.0">
+      <created>1570240792058</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570240792059</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2466000" />
+    <option name="totallyTimeSpent" value="3619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="JRebel" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Designer" />
-      <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1671141" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21677852" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Application Servers" weight="0.32907802" />
-      <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" weight="0.32102272" />
-      <window_info anchor="bottom" id="Problems" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="JRebel Executor" weight="0.38297874" />
-      <window_info anchor="bottom" id="JRebel Console" side_tool="true" />
+      <window_info id="Designer" order="2" />
+      <window_info id="JRebel" order="3" side_tool="true" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info id="Image Layers" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -647,15 +491,27 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32907802" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Problems" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="JRebel Executor" order="16" visible="true" weight="0.35185185" />
+      <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="18" weight="0.32102272" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,7 +519,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="焦斌-YiHuo2.0，非聚合项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="焦斌-YiHuo2.0，非聚合项目" />
+    <MESSAGE value="白天明-社区1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="白天明-社区1.0" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-service.xml">
@@ -676,16 +533,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/controller/MySwaggerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,16 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4368">
-          <caret line="182" column="9" lean-forward="true" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/entry/Course.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -812,23 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="31" column="54" lean-forward="true" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/CourseMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/mapper/CourseMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -861,6 +681,103 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/service/impl/CommunityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/service/CommunityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/controller/MySwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/controller/CommunityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/CommunityMapper" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/LabelMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/mapper/CommunityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qfedu/mapper/CourseMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/CourseMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/qfedu/mapper/CommunityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
