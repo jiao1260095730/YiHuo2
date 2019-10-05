@@ -29,12 +29,21 @@ public class CourseController {
     LabelService labelService;
 
     @ResponseBody
-    @RequestMapping(value = "/showList",method = RequestMethod.POST)
+    @RequestMapping(value = "/showList", method = RequestMethod.POST)
     @ApiOperation(value = "该方法用来展示课程列表")
     public String courseList(Model model) {
         List<Course> courseList = courseService.selectAllCourse();
         model.addAttribute("courseList", courseList);
         return JsonUtils.objectToJson(courseList);
+    }
+
+    @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST)
+    @ResponseBody
+    @ApiOperation(value = "该方法用来展示遇见中的课程")
+    public String showOneCourse(Integer id, Model model) {
+        Course course = courseService.getCourseById(id);
+        model.addAttribute("course", course);
+        return JsonUtils.objectToJson(course);
     }
 
     @RequestMapping(value = "listByLables",method = {RequestMethod.POST,RequestMethod.GET})

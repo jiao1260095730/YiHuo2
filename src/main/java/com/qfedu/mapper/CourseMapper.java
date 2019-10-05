@@ -8,5 +8,7 @@ import java.util.List;
 public interface CourseMapper {
     List<Course> selectAllCourse();
 
+    Course getCourseById(Integer id);
+
     List<Course> selectCourseListByLabel(Label label);
 }

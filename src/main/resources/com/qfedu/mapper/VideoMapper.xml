@@ -13,7 +13,6 @@
         <result column="video_url" property="videoUrl" jdbcType="VARCHAR" />
         <result column="show_time" property="showTime" jdbcType="VARCHAR" />
         <result column="teacher_id" property="teacherId" jdbcType="INTEGER" />
-        <result column="course_id" property="courseId" jdbcType="INTEGER" />
         <result column="label_id" property="labelId" jdbcType="VARCHAR" />
     </resultMap>
 

@@ -4,18 +4,27 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qfedu.mapper.CourseMapper">
 
-    <resultMap id="courseMap" type="course" >
-        <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="course_name" property="courseName" jdbcType="VARCHAR" />
-        <result column="course_desc" property="courseDesc" jdbcType="VARCHAR" />
-        <result column="buy_num" property="buyNum" jdbcType="VARCHAR" />
-        <result column="teacher_id" property="teacherId" jdbcType="INTEGER" />
-        <result column="label_id" property="labelId" jdbcType="VARCHAR" />
-        <result column="type_id" property="typeId" jdbcType="INTEGER" />
+    <resultMap id="courseMap" type="Course">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="course_name" property="courseName" jdbcType="VARCHAR"/>
+        <result column="course_desc" property="courseDesc" jdbcType="VARCHAR"/>
+        <result column="buy_num" property="buyNum" jdbcType="VARCHAR"/>
+        <result column="course_show_img" property="courseShowImg" jdbcType="VARCHAR"/>
+        <result column="teacher_id" property="teacherId" jdbcType="INTEGER"/>
+        <result column="label_id" property="labelId" jdbcType="VARCHAR"/>
+        <result column="type_id" property="typeId" jdbcType="INTEGER"/>
     </resultMap>
-
+    <sql id="BaseColumnList" >
+    id, course_name, course_desc, buy_num, teacher_id, label_id, type_id
+  </sql>
     <select id="selectAllCourse" resultMap="courseMap">
         select * from course;
+    </select>
+    <select id="getCourseById" parameterType="int" resultMap="courseMap">
+        select
+        <include refid="BaseColumnList"/>
+        from course
+        where id=#{id,jdbcType = INTEGER}
     </select>
     <select id="selectCourseListByLabel" resultMap="courseMap">
         select * from course c where

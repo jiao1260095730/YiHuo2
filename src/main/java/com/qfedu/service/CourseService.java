@@ -9,5 +9,7 @@ public interface CourseService {
 
     List<Course> selectAllCourse();
 
+    Course getCourseById(Integer id);
+
     List<Course> selectCourseListByLabel(Label label);
 }

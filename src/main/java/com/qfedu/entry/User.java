@@ -3,11 +3,9 @@ package com.qfedu.entry;
 import lombok.Getter;
 import lombok.Setter;
 
-
-@Getter
 @Setter
+@Getter
 public class User {
-
     private Integer id;
 
     private String email;
@@ -36,8 +34,6 @@ public class User {
 
     private String vip;
 
-    private Integer buyCourseId;
-
     private String birthday;
 
     private String address;
@@ -47,4 +43,17 @@ public class User {
     private String trade;
 
     private String education;
-}
+
+    private String realName;
+
+    private String weiXin;
+
+    private String schoolTag;
+
+    private String major;
+
+    private String beGoodAt;
+
+    private String experience;
+
+  }
