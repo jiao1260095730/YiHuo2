@@ -57,9 +57,11 @@ public class UserController {
     @ApiOperation(value = "该方法用于用户使用邮箱注册，输入邮箱，密码，验证码")
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
-    @ApiImplicitParams(
-            {@ApiImplicitParam(name = "email", value = "邮箱", required = true, dataType = "String"),
-                    @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")}
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "email", value = "邮箱", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "validateNum", value = "验证码", required = true, dataType = "String")
+    }
     )
     public String register(User user) {
         int count = userService.register(user);
