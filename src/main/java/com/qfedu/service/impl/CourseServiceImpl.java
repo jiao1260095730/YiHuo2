@@ -32,7 +32,7 @@ public class CourseServiceImpl implements CourseService {
         return courseMapper.selectCourseListByqueryText(queryText);
     }
 
-    public List<Course> selectGuessLikeCourseList() {
-        return courseMapper.selectAllCourseOrderByIdDesc();
+    public int getIdByCourseShowImg(Course course) {
+        return courseMapper.getIdByCourseShowImg(course);
     }
 }

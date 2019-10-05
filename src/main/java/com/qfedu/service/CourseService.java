@@ -15,6 +15,6 @@ public interface CourseService {
 
     List<Course> selectCourseListByqueryText(String queryText);
 
-    List<Course> selectGuessLikeCourseList();
+    int getIdByCourseShowImg(Course course);
 
 }

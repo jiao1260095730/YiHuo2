@@ -14,5 +14,5 @@ public interface CourseMapper {
 
     List<Course> selectCourseListByqueryText(String queryText);
 
-    List<Course> selectAllCourseOrderByIdDesc();
+    int getIdByCourseShowImg(Course course);
 }

@@ -41,12 +41,9 @@
         or
         course_desc like concat('%',#{queryText},'%')
     </select>
-
-    <select id="selectAllCourseOrderByIdDesc" resultMap="courseMap">
-        select * from course
-        order by
-        id desc
-    </select>
-
+<select id="getIdByCourseShowImg" resultMap="courseMap">
+        select id from course
+        where courseShowImg={courseShowImg}
+</select>
 
 </mapper>
