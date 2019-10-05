@@ -2,6 +2,7 @@ package com.qfedu.controller;
 
 
 import com.qfedu.entry.Teacher;
+import com.qfedu.entry.User;
 import com.qfedu.service.CommunityService;
 import com.qfedu.utils.JsonUtils;
 import io.swagger.annotations.Api;
@@ -28,6 +29,14 @@ public class CommunityController {
     public String focusCommunity() {
        List<Teacher> teacherList  = communityService.selectTeacher();
         return JsonUtils.objectToJson(teacherList);
+    }
+
+    @RequestMapping(value = "/showOneUser", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    @ApiOperation(value = "社区随机展示一个用户")
+    public String showOneUser() {
+        User user = communityService.selectUser();
+        return JsonUtils.objectToJson(user);
     }
 
 }
