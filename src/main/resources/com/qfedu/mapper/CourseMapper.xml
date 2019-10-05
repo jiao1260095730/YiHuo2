@@ -14,7 +14,7 @@
         <result column="label_id" property="labelId" jdbcType="VARCHAR"/>
         <result column="type_id" property="typeId" jdbcType="INTEGER"/>
     </resultMap>
-    <sql id="BaseColumnList" >
+    <sql id="BaseColumnList">
     id, course_name, course_desc, buy_num, teacher_id, label_id, type_id
   </sql>
     <select id="selectAllCourse" resultMap="courseMap">
@@ -41,9 +41,16 @@
         or
         course_desc like concat('%',#{queryText},'%')
     </select>
-<select id="getIdByCourseShowImg" resultMap="courseMap">
+    <select id="getIdByCourseShowImg" resultMap="courseMap">
         select id from course
         where courseShowImg={courseShowImg}
-</select>
+    </select>
+
+    <select id="selectAllCourseOrderByIdDesc" resultMap="courseMap">
+        select * from course
+        order by
+        id desc
+    </select>
+
 
 </mapper>

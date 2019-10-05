@@ -17,4 +17,5 @@ public interface CourseService {
 
     int getIdByCourseShowImg(Course course);
 
+    List<Course> selectGuessLikeCourseList();
 }

@@ -35,4 +35,8 @@ public class CourseServiceImpl implements CourseService {
     public int getIdByCourseShowImg(Course course) {
         return courseMapper.getIdByCourseShowImg(course);
     }
+
+    public List<Course> selectGuessLikeCourseList() {
+        return courseMapper.selectAllCourseOrderByIdDesc();
+    }
 }
