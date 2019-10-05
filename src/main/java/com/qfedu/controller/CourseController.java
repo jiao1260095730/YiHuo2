@@ -48,7 +48,7 @@ public class CourseController {
 
     @RequestMapping(value = "/listByLabels",method = {RequestMethod.POST,RequestMethod.GET},produces = "application/json;charset=UTF-8")
     @ResponseBody
-    @ApiOperation(value = "点击标签查询")
+    @ApiOperation(value = "点击标签查询（前端传来标签的name）")
     @ApiImplicitParam(name = "labelName",value = "点击的标签",required = true,dataType = "String")
     public String listByLabels(String labelName) {
         //获取标签id
