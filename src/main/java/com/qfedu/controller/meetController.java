@@ -24,9 +24,10 @@ public class meetController {
     @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "该方法用来展示遇见中的课程")
-    public String showOneCourse(Integer id, Model model) {
-        Course course = courseService.getCourseById(id);
-        model.addAttribute("course", course);
+    public String showOneCourse( Model model,Course course) {
+        int id = courseService.getIdByCourseShowImg(course);
+        Course course1 = courseService.getCourseById(id);
+        model.addAttribute("course", course1);
         return JsonUtils.objectToJson(course);
     }
 
@@ -34,9 +35,8 @@ public class meetController {
     @ResponseBody
     @ApiOperation(value = "该方法用来展示遇见中的图片")
     public String showCourseImg(HttpSession session,Model model, Course course){
-
         int id = courseService.getIdByCourseShowImg(course);
-        return "success";
+                return "success";
     }
 
 }
