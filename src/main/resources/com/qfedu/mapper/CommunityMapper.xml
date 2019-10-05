@@ -16,6 +16,4 @@
     <select id="selectTeacher" resultMap="BaseResultMap">
         select * from teacher;
     </select>
-
-
 </mapper>
