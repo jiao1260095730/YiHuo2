@@ -2,7 +2,6 @@ package com.qfedu.controller;
 
 import com.qfedu.entry.Course;
 import com.qfedu.entry.Label;
-import com.qfedu.entry.Video;
 import com.qfedu.service.CourseService;
 import com.qfedu.service.LabelService;
 import com.qfedu.utils.JsonUtils;
@@ -20,7 +19,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/course")
-@Api(tags = "该类实现所有关于course的功能")
+@Api(tags = "该类实现所有关于course的功能（主页的功能也在此类实现）")
 public class CourseController {
 
     @Autowired
@@ -28,20 +27,30 @@ public class CourseController {
     @Autowired
     LabelService labelService;
 
+
+    @RequestMapping(value = "/showList", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
-    @RequestMapping(value = "/showList", method = RequestMethod.POST)
     @ApiOperation(value = "该方法用来展示课程列表")
     public String courseList(Model model) {
         List<Course> courseList = courseService.selectAllCourse();
-        model.addAttribute("courseList", courseList);
+
         return JsonUtils.objectToJson(courseList);
     }
 
+    @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    @ApiOperation(value = "该方法用来展示遇见中的课程")
+    public String showOneCourse(Integer id, Model model) {
+        Course course = courseService.getCourseById(id);
+        model.addAttribute("course", course);
+        return JsonUtils.objectToJson(course);
+    }
 
-    @RequestMapping(value = "/listByLabels",method = {RequestMethod.POST,RequestMethod.GET})
+    @RequestMapping(value = "/listByLabels",method = {RequestMethod.POST,RequestMethod.GET},produces = "application/json;charset=UTF-8")
+    @ResponseBody
     @ApiOperation(value = "点击标签查询")
     @ApiImplicitParam(name = "labelName",value = "点击的标签",required = true,dataType = "String")
-    public void listByLabels(String labelName,Model model) {
+    public String listByLabels(String labelName) {
         //获取标签id
         int labelId = labelService.getIdByName(labelName);
         Label label = new Label();
@@ -50,6 +59,18 @@ public class CourseController {
         //查询
         List<Course> courseList = courseService.selectCourseListByLabel(label);
 
-        model.addAttribute("courseList",courseList);
+        return JsonUtils.objectToJson(courseList);
+    }
+
+    /**
+     * 搜索栏输入文字，模糊查询所有课程（1.courseName 2.courseDesc）
+     */
+    @RequestMapping(value = "/queryCourse",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    @ApiOperation(value = "输入文字查询课程")
+    @ApiImplicitParam(name = "queryText",value = "输入的文字",required = true,dataType = "String")
+    public String queryCourse(String queryText) {
+        List<Course> courseList = courseService.selectCourseListByqueryText(queryText);
+        return JsonUtils.objectToJson(courseList);
     }
 }

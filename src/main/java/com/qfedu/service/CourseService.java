@@ -12,4 +12,6 @@ public interface CourseService {
     Course getCourseById(Integer id);
 
     List<Course> selectCourseListByLabel(Label label);
+
+    List<Course> selectCourseListByqueryText(String queryText);
 }

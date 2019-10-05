@@ -27,4 +27,8 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> selectCourseListByLabel(Label label) {
         return courseMapper.selectCourseListByLabel(label);
     }
+
+    public List<Course> selectCourseListByqueryText(String queryText) {
+        return courseMapper.selectCourseListByqueryText(queryText);
+    }
 }

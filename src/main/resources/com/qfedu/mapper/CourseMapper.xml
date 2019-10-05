@@ -35,5 +35,12 @@
         find_in_set(#{id},c.label_id)
     </select>
 
+    <select id="selectCourseListByqueryText" resultMap="courseMap">
+        select * from course where
+        course_name like concat('%',#{queryText},'%')
+        or
+        course_desc like concat('%',#{queryText},'%')
+    </select>
+
 
 </mapper>

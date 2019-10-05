@@ -11,4 +11,6 @@ public interface CourseMapper {
     Course getCourseById(Integer id);
 
     List<Course> selectCourseListByLabel(Label label);
+
+    List<Course> selectCourseListByqueryText(String queryText);
 }
