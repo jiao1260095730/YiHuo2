@@ -19,7 +19,7 @@ public class meetController {
     @Autowired
     CourseService courseService;
 
-    @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST)
+    @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "该方法用来展示遇见中的课程")
     public String showOneCourse(Integer id, Model model) {

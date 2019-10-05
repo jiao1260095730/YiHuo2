@@ -37,14 +37,7 @@ public class CourseController {
         return JsonUtils.objectToJson(courseList);
     }
 
-    @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
-    @ResponseBody
-    @ApiOperation(value = "该方法用来展示遇见中的课程")
-    public String showOneCourse(Integer id, Model model) {
-        Course course = courseService.getCourseById(id);
-        model.addAttribute("course", course);
-        return JsonUtils.objectToJson(course);
-    }
+
 
     @RequestMapping(value = "/listByLabels",method = {RequestMethod.POST,RequestMethod.GET},produces = "application/json;charset=UTF-8")
     @ResponseBody
