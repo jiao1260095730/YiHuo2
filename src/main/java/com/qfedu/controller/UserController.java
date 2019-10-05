@@ -70,7 +70,7 @@ public class UserController {
         return "fail";
     }
 
-    @RequestMapping(value = "isLogin", method = RequestMethod.POST)
+    @RequestMapping(value = "/isLogin", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "验证用户名email和密码password登陆")
     @ApiImplicitParams({
@@ -109,7 +109,7 @@ public class UserController {
      * @param code  用户输入的验证码
      * @return 验证通过返回success
      */
-    @RequestMapping(value = "resetValidateCode", method = RequestMethod.POST)
+    @RequestMapping(value = "/resetValidateCode", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "验证忘记密码时重置密码的验证码是否正确")
     @ApiImplicitParams({
@@ -132,7 +132,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "resetPassword", method = RequestMethod.POST)
+    @RequestMapping(value = "/resetPassword", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "重置密码")
     @ApiImplicitParams({
@@ -162,7 +162,7 @@ public class UserController {
      * @param oldPassword 前端页面输入的旧密码
      * @return 验证通过返回success
      */
-    @RequestMapping(value = "validateOldPassword", method = RequestMethod.POST)
+    @RequestMapping(value = "/validateOldPassword", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "修改密码时，验证旧密码是否正确")
     @ApiImplicitParams({
@@ -183,7 +183,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "setNewPassword", method = RequestMethod.POST)
+    @RequestMapping(value = "/setNewPassword", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "修改密码，设置新密码")
     @ApiImplicitParams({
@@ -206,7 +206,7 @@ public class UserController {
      * @param user    实体User
      * @return 成功返回success ，失败返回 fail
      */
-    @RequestMapping(value = "updateInformation", method = RequestMethod.POST)
+    @RequestMapping(value = "/updateInformation", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "在设置中完善个人资料")
     @ApiImplicitParams({

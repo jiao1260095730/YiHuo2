@@ -46,7 +46,7 @@ public class CourseController {
         return JsonUtils.objectToJson(course);
     }
 
-    @RequestMapping(value = "listByLables",method = {RequestMethod.POST,RequestMethod.GET})
+    @RequestMapping(value = "/listByLables",method = {RequestMethod.POST,RequestMethod.GET})
     @ApiOperation(value = "点击标签查询")
     @ApiImplicitParam(name = "labelName",value = "点击的标签",required = true,dataType = "String")
     public void listByLabels(String labelName,Model model) {
