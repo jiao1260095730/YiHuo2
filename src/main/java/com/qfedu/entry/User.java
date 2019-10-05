@@ -56,4 +56,6 @@ public class User {
 
     private String experience;
 
+    private String courseId;
+
   }

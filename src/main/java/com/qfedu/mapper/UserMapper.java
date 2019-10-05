@@ -21,4 +21,8 @@ public interface UserMapper {
     int updateInformation(User user);
 
     int updateRealMessage(User user);
+
+    int addCourseIdUserId(User user);
+
+    int selectUserIdByEmail(String email);
 }

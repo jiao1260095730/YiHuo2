@@ -42,6 +42,10 @@
         insert into user (email, validate_num) values (#{email}, #{validateNum})
     </insert>
 
+    <insert id="addCourseIdUserId" parameterType="user">
+        insert into shou_cang (user_id,course_id) values (#{id},#{courseId})
+    </insert>
+
     <select id="selectUserByUserNameAndPassword" parameterType="user" resultType="int">
         select count(1) from user where email=#{email} and password=#{password}
     </select>
@@ -53,6 +57,7 @@
     <select id="selectUserByValidateNumAndEmail" resultType="java.lang.Integer" parameterType="user">
         select count(1) from user where email = #{email} and validate_num = #{validateNum}
     </select>
+
     <update id="updateInformation" parameterType="com.qfedu.entry.User">
     update user
     set
@@ -65,6 +70,7 @@
       education = #{education,jdbcType=VARCHAR}
     where email = #{email,jdbcType=VARCHAR}
     </update>
+
     <update id="updateRealMessage" parameterType="user">
         update user
         set
@@ -79,5 +85,9 @@
 
     <select id="selectShowUserByEmail" parameterType="user" resultMap="userMap">
         select * from user where email = #{email}
+    </select>
+
+    <select id="selectUserIdByEmail" parameterType="user" resultType="java.lang.Integer">
+        select id from user where email=#{email}
     </select>
 </mapper>

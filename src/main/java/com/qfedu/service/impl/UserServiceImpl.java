@@ -57,4 +57,12 @@ public class UserServiceImpl implements UserService {
     public int updateRealMessage(User user) {
         return userMapper.updateRealMessage(user);
     }
+
+    public int addCourseIdUserId(User user) {
+        return userMapper.addCourseIdUserId(user);
+    }
+
+    public int selectUserIdByEmail(String email) {
+        return userMapper.selectUserIdByEmail(email);
+    }
 }

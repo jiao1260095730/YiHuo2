@@ -31,7 +31,7 @@ public class UserController {
      * @param email 从页面获取到的email
      * @return 以被注册返回 fail，表示该email不能使用，否则返回 success 表示该email可以使用
      */
-    @RequestMapping(value = "/verify", method = RequestMethod.POST)
+    @RequestMapping(value = "/verify", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "该方法用来验证邮箱是否存在")
     public String verify(String email) {
@@ -228,7 +228,7 @@ public class UserController {
         return "fail";
     }
 
-    @RequestMapping(value = "/showUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/showUser", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "根据用户的email展示用户的所有信息")
     public String showUser(HttpSession session, Model model) {
@@ -239,7 +239,7 @@ public class UserController {
     }
 
     /**
-     *  退出登录
+     * 退出登录
      * @param session 从页面的得到的邮箱账号
      * @return 返回登录初始页面，目前测试为success；
      */
@@ -276,6 +276,24 @@ public class UserController {
             return "success";
         }
         return "fail";
+    }
 
+    @RequestMapping(value = "/userCollect",method = RequestMethod.POST)
+    @ResponseBody
+    @ApiOperation(value = "用来收藏课程")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "courseId", value = "课程ID", required = true, dataType = "String")
+    })
+    public String userCollect(HttpSession session,String courseId,User user) {
+        String email = (String) session.getAttribute("email");
+        int id = userService.selectUserIdByEmail(email);
+        user.setId(id);
+        user.setCourseId(courseId);
+        int count = userService.addCourseIdUserId(user);
+        if (count > 0) {
+            return "success";
+        }
+        return "fail";
     }
 }
