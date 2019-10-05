@@ -1,6 +1,7 @@
 package com.qfedu.service.impl;
 
 import com.qfedu.entry.Teacher;
+import com.qfedu.entry.User;
 import com.qfedu.mapper.CommunityMapper;
 import com.qfedu.service.CommunityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,9 @@ public class CommunityServiceImpl implements CommunityService {
 
     public List<Teacher> selectTeacher() {
         return communityMapper.selectTeacher();
+    }
+
+    public User selectUser() {
+        return communityMapper.selectUser();
     }
 }

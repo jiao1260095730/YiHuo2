@@ -27,4 +27,8 @@
     <select id="selectTeacher" resultMap="teacherMap">
         select * from teacher;
     </select>
+
+    <select id="selectUser" resultMap="com.qfedu.mapper.UserMapper.userMap">
+        select * from user where id = 1
+    </select>
 </mapper>
