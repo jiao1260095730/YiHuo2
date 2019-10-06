@@ -6,7 +6,7 @@ public interface UserService {
 
     int register(User user);
 
-    int validate(String email);
+    int validate(User user);
 
     boolean isLogin(User user);
 
@@ -29,4 +29,8 @@ public interface UserService {
     User selectUserByTokenId(String tokenId);
 
     int updateTokenId(User user);
+
+    int isRealPassword(User user);
+
+    void updateNewPassword(User user);
 }

@@ -68,7 +68,7 @@
       profession = #{profession,jdbcType=VARCHAR},
       trade = #{trade,jdbcType=VARCHAR},
       education = #{education,jdbcType=VARCHAR}
-    where email = #{email,jdbcType=VARCHAR}
+    where token_id = #{tokenId,jdbcType=VARCHAR}
     </update>
 
     <update id="updateRealMessage" parameterType="user">
@@ -80,7 +80,7 @@
             major = #{major,jdbcType=VARCHAR},
             be_good_at = #{beGoodAt,jdbcType=VARCHAR},
             experience = #{experience,jdbcType=VARCHAR}
-        where email = #{email,jdbcType=VARCHAR}
+        where token_id = #{tokenId,jdbcType=VARCHAR}
   </update>
 
     <select id="selectShowUserByEmail" parameterType="user" resultMap="userMap">
@@ -97,5 +97,17 @@
 
     <update id="updateTokenId" parameterType="user">
         update user set token_id = #{tokenId} where email = #{email};
+    </update>
+
+    <update id="updateValidateNum" parameterType="user">
+        update user set validate_num = #{validateNum} where email = #{email}
+    </update>
+
+    <select id="isRealPassword" parameterType="user" resultType="int">
+        select count(1) from user where token_id = #{tokenId} and password = #{password}
+    </select>
+
+    <update id="updateNewPassword" parameterType="user">
+        update user set password=#{newPassword} where token_id = #{tokenId}
     </update>
 </mapper>

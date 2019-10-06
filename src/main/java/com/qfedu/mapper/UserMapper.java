@@ -29,4 +29,10 @@ public interface UserMapper {
     User selectUserByTokenId(String tokenId);
 
     int updateTokenId(User user);
+
+    int updateValidateNum(User user);
+
+    int isRealPassword(User user);
+
+    void updateNewPassword(User user);
 }

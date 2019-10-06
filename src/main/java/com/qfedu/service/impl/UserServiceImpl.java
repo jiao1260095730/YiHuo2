@@ -17,20 +17,30 @@ public class UserServiceImpl implements UserService {
         return userMapper.register(user);
     }
 
-    public int validate(String email) {
-        User user = new User();
-        user.setEmail(email);
+    public int validate(User user) {//user 里有email
+
+        //获取六位随机验证码
         String validateCode = MailUtils.getValidateCode(6);
         user.setValidateNum(validateCode);
-        MailUtils.sendMail(email, "您好，您正在注册艺伙app，您的验证码是："
-                + validateCode + "，请及时输入验证码", "艺伙app验证码");
-        int count = userMapper.insertValidateNum(user);
-        return count;
+
+        //发送验证码
+        MailUtils.sendMail(user.getEmail(), "尊敬的客户您好，您正在注册艺伙app，您的验证码是："
+                + validateCode + "，请及时输入验证码，欢迎进入艺伙世界！", "艺伙app验证码");
+        User _user = userMapper.selectShowUserByEmail(user.getEmail());
+
+        //判断邮箱是否存在，若存在则为忘记密码，修改验证码，若不存在则为注册时添加验证码
+        if (_user == null){
+            int count = userMapper.insertValidateNum(user);
+            return count;
+        } else {
+            int count = userMapper.updateValidateNum(user);
+            return count;
+        }
+
     }
 
     public boolean isLogin(User user) {
         int result = userMapper.selectUserByUserNameAndPassword(user);
-        System.out.println(result);
         return result > 0 ? true : false;
     }
 
@@ -44,7 +54,7 @@ public class UserServiceImpl implements UserService {
 
     public boolean selectUserByValidateNumAndEmail(User user) {
         int result = userMapper.selectUserByValidateNumAndEmail(user);
-        return result == 1 ? true : false;
+        return result > 0 ? true : false;
     }
 
     public User selectShowUserByEmail(String email) {
@@ -73,5 +83,13 @@ public class UserServiceImpl implements UserService {
 
     public int updateTokenId(User user) {
         return userMapper.updateTokenId(user);
+    }
+
+    public int isRealPassword(User user) {
+        return userMapper.isRealPassword(user);
+    }
+
+    public void updateNewPassword(User user) {
+        userMapper.updateNewPassword(user);
     }
 }
