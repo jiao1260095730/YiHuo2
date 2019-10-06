@@ -1,5 +1,6 @@
 package com.qfedu.controller;
 
+import com.qfedu.entry.Data;
 import com.qfedu.entry.User;
 import com.qfedu.service.UserService;
 import com.qfedu.utils.JsonUtils;
@@ -10,8 +11,8 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.spring.web.json.Json;
 
 import javax.servlet.http.HttpSession;
 
@@ -72,36 +73,36 @@ public class UserController {
         return "fail";
     }
 
-    @RequestMapping(value = "/isLogin", method = RequestMethod.POST)
+    @RequestMapping(value = "/isLogin", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "验证用户名email和密码password登陆")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "email", value = "邮箱", required = true, dataType = "String"),
             @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
     })
-    public String isLogin(@RequestBody String email,@RequestBody String password) {
-
-        User user = new User();
-        user.setEmail(email);
-        user.setPassword(password);
+    @CrossOrigin(value = "*" , allowedHeaders = "*")
+    public String isLogin(@RequestBody User user) {
 
         String tokenId = UUIDUtils.getUUID();
         user.setTokenId(tokenId);
 
         boolean result = userService.isLogin(user);
+        Data data = new Data();
 
         if (result) {
-            return "success";
-            //将email存入session
-            //session.setAttribute("email", email);
-            int count = userService.updateTokenId(user);
-            return tokenId;
+
+            data.setCode(200);
+            data.setToken(tokenId);
+            data.setMsg("用户已登录");
+
+            userService.updateTokenId(user);
+            return JsonUtils.objectToJson(data);
         } else {
             return "fail";
         }
     }
 
-    /**
+    /*
      * 忘记密码并重置密码的流程：
      *      1.验证邮箱是否存在，前端blur方法触发ajax，调用verify方法，存在返回false
      *      2.前端点击发送验证码按钮（邮箱存在方可使用），调用后端validate方法发送验证码至邮箱，验证通过跳转重置密码页面
@@ -157,7 +158,7 @@ public class UserController {
         return "success";
     }
 
-    /**
+    /*
      * 修改密码流程：
      *      1.前端页面输入旧密码，blur事件触发ajax方法，验证旧密码
      *      2.输入两次新密码，页面完成相同验证，点击修改按钮，后台完成数据库更新
@@ -227,7 +228,7 @@ public class UserController {
             @ApiImplicitParam(name = "trade", value = "行业", required = true, dataType = "String"),
             @ApiImplicitParam(name = "education", value = "学历", required = true, dataType = "String")
     })
-    public String updateInformation(HttpSession session, User user) {
+    public String updateInformation(HttpSession session, @RequestBody User user) {
         user.setEmail((String) session.getAttribute("email"));
         int count = userService.updateInformation(user);
         if (count > 0) {
@@ -240,7 +241,7 @@ public class UserController {
     @ResponseBody
     @ApiOperation(value = "根据用户的email展示用户的所有信息")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "tokenId", value = "token值", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "tokenId", value = "token值", required = true, dataType = "String")
     })
     public String showUser( String tokenId) {
         //String email = (String) session.getAttribute("email");
@@ -287,7 +288,7 @@ public class UserController {
             @ApiImplicitParam(name = "beGoodAt", value = "擅长领域", required = true, dataType = "String"),
             @ApiImplicitParam(name = "experience", value = "经历", required = true, dataType = "String")
     })
-    public String updateRealMessage(HttpSession session, User user) {
+    public String updateRealMessage(HttpSession session, @RequestBody User user) {
 
         user.setEmail((String) session.getAttribute("email"));
         int count = userService.updateRealMessage(user);
@@ -304,7 +305,7 @@ public class UserController {
             @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "String"),
             @ApiImplicitParam(name = "courseId", value = "课程ID", required = true, dataType = "String")
     })
-    public String userCollect(HttpSession session, String courseId, User user) {
+    public String userCollect(HttpSession session, String courseId, @RequestBody User user) {
         String email = (String) session.getAttribute("email");
         int id = userService.selectUserIdByEmail(email);
         user.setId(id);

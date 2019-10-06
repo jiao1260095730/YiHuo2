@@ -8,6 +8,7 @@ import com.qfedu.service.CourseService;
 import com.qfedu.utils.JsonUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,10 +28,11 @@ public class meetController {
     CourseService courseService;
 
 
+
     //展示遇见图片 进行分页
     @RequestMapping(value = "/showCourseListImg", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
-    @ApiOperation(value = "该方法用来分页展示课程列表")
+    @ApiOperation(value = "该方法用来分页展示课程列表",notes = "可以用来获取遇见中想要展示的封面图片  下一页是不想看")
 
 
     public String showCourseListImg(Model model, @RequestParam(name = "当前页页码",required = false, defaultValue = "1") int page, @RequestParam(name = "每页显示个数",required = false, defaultValue = "5") int pageSize) {
@@ -43,16 +45,15 @@ public class meetController {
     }
 
 
-   //@RequestMapping(value = "/showOneCourse", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-   //@ResponseBody
-   //@ApiOperation(value = "该方法用来展示遇见中的课程")
-   //@ApiImplicitParam(name = "id", value = "想要查找的id", required = true, dataType = "Integer")
+   @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+   @ResponseBody
+   @ApiOperation(value = "开始画功能",notes = "根据所给的视频封面从前端获取ID，传入后台，进入相应视频课程页面")
+   @ApiImplicitParam(name = "id", value = "想要查找的id", required = true, dataType = "Integer")
 
-   //public String showOneCourse(Integer id) {
-   //    Course course = courseService.getCourseById(id);
-
-   //    return JsonUtils.objectToJson(course);
-   //}
+   public String showOneCourse(Integer id) {
+       Course course = courseService.getCourseById(id);
+       return JsonUtils.objectToJson(course);
+   }
 
    //@RequestMapping(value = "/showCourseImg", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
    //@ResponseBody
