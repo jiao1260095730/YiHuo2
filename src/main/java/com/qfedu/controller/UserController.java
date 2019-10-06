@@ -1,5 +1,6 @@
 package com.qfedu.controller;
 
+import com.qfedu.entry.Data;
 import com.qfedu.entry.User;
 import com.qfedu.service.UserService;
 import com.qfedu.utils.JsonUtils;
@@ -11,6 +12,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.spring.web.json.Json;
 
 import javax.servlet.http.HttpSession;
 
@@ -71,7 +73,7 @@ public class UserController {
         return "fail";
     }
 
-    @RequestMapping(value = "/isLogin", method = RequestMethod.POST)
+    @RequestMapping(value = "/isLogin", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "验证用户名email和密码password登陆")
     @ApiImplicitParams({
@@ -81,20 +83,20 @@ public class UserController {
     @CrossOrigin(value = "*" , allowedHeaders = "*")
     public String isLogin(@RequestBody User user) {
 
-       /* User user = new User();
-        user.setEmail(email);
-        user.setPassword(password);*/
-
         String tokenId = UUIDUtils.getUUID();
         user.setTokenId(tokenId);
 
         boolean result = userService.isLogin(user);
+        Data data = new Data();
 
         if (result) {
-            //将email存入session
-            //session.setAttribute("email", email);
+
+            data.setCode(200);
+            data.setToken(tokenId);
+            data.setMsg("用户已登录");
+
             userService.updateTokenId(user);
-            return tokenId;
+            return JsonUtils.objectToJson(data);
         } else {
             return "fail";
         }
