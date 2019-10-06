@@ -3,6 +3,7 @@ package com.qfedu.controller;
 import com.qfedu.entry.User;
 import com.qfedu.service.UserService;
 import com.qfedu.utils.JsonUtils;
+import com.qfedu.utils.UUIDUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -79,18 +80,22 @@ public class UserController {
             @ApiImplicitParam(name = "email", value = "邮箱", required = true, dataType = "String"),
             @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
     })
-    public String isLogin(String email, String password, HttpSession session) {
+    public String isLogin(String email, String password) {
 
         User user = new User();
         user.setEmail(email);
         user.setPassword(password);
 
+        String tokenId = UUIDUtils.getUUID();
+        user.setTokenId(tokenId);
+
         boolean result = userService.isLogin(user);
 
         if (result) {
             //将email存入session
-            session.setAttribute("email", email);
-            return "success";
+            //session.setAttribute("email", email);
+            int count = userService.updateTokenId(user);
+            return tokenId;
         } else {
             return "fail";
         }
@@ -233,11 +238,20 @@ public class UserController {
     @RequestMapping(value = "/showUser", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "根据用户的email展示用户的所有信息")
-    public String showUser(HttpSession session, Model model) {
-        String email = (String) session.getAttribute("email");
-        User user = userService.selectShowUserByEmail(email);
-        model.addAttribute("user", user);
-        return JsonUtils.objectToJson(user);
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "tokenId", value = "token值", required = true, dataType = "String"),
+    })
+    public String showUser( String tokenId) {
+        //String email = (String) session.getAttribute("email");
+        //User user = userService.selectShowUserByEmail(email);
+        //model.addAttribute("user", user);
+        if (tokenId != null && !tokenId.equals("")) {
+            User user = userService.selectUserByTokenId(tokenId);
+
+            return JsonUtils.objectToJson(user);
+        }
+
+        return "fail";
     }
 
     /**
