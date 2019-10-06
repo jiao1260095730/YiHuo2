@@ -30,7 +30,8 @@ public class UserServiceImpl implements UserService {
 
     public boolean isLogin(User user) {
         int result = userMapper.selectUserByUserNameAndPassword(user);
-        return result == 1 ? true : false;
+        System.out.println(result);
+        return result > 0 ? true : false;
     }
 
     public int selectVerify(String email) {
@@ -64,5 +65,13 @@ public class UserServiceImpl implements UserService {
 
     public int selectUserIdByEmail(String email) {
         return userMapper.selectUserIdByEmail(email);
+    }
+
+    public User selectUserByTokenId(String tokenId) {
+        return userMapper.selectUserByTokenId(tokenId);
+    }
+
+    public int updateTokenId(User user) {
+        return userMapper.updateTokenId(user);
     }
 }

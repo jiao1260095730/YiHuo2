@@ -90,4 +90,12 @@
     <select id="selectUserIdByEmail" parameterType="user" resultType="java.lang.Integer">
         select id from user where email=#{email}
     </select>
+
+    <select id="selectUserByTokenId" parameterType="String" resultMap="userMap">
+        select * from user where token_id = #{tokenId};
+    </select>
+
+    <update id="updateTokenId" parameterType="user">
+        update user set token_id = #{tokenId} where email = #{email};
+    </update>
 </mapper>

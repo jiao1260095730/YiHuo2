@@ -25,4 +25,8 @@ public interface UserMapper {
     int addCourseIdUserId(User user);
 
     int selectUserIdByEmail(String email);
+
+    User selectUserByTokenId(String tokenId);
+
+    int updateTokenId(User user);
 }
