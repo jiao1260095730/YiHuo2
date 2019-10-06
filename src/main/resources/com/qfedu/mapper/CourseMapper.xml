@@ -18,7 +18,7 @@
     id, course_name, course_desc, buy_num, teacher_id, label_id, type_id
   </sql>
     <select id="selectAllCourse" resultMap="courseMap">
-        select * from course;
+        select * from course
     </select>
     <select id="getCourseById" parameterType="int" resultMap="courseMap">
         select
@@ -42,8 +42,7 @@
         course_desc like concat('%',#{queryText},'%')
     </select>
     <select id="getIdByCourseShowImg" resultMap="courseMap">
-        select id from course
-        where courseShowImg={courseShowImg}
+        select id from course where course_show_img = #{courseShowImg}
     </select>
 
     <select id="selectAllCourseOrderByIdDesc" resultMap="courseMap">
@@ -51,6 +50,5 @@
         order by
         id desc
     </select>
-
 
 </mapper>

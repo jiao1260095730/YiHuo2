@@ -50,6 +50,7 @@ public class UserController {
             @ApiImplicitParam(name = "validateNum", value = "验证码", required = true, dataType = "String")
     }
     )
+    @CrossOrigin(value = "*", allowedHeaders = "*")
     public String register(@RequestBody User user) {
         System.out.println(user);
         int count = userService.register(user);
@@ -78,7 +79,7 @@ public class UserController {
             @ApiImplicitParam(name = "email", value = "邮箱", required = true, dataType = "String"),
             @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
     })
-    public String isLogin(String email, String password, HttpSession session) {
+    public String isLogin(@RequestBody String email,@RequestBody String password) {
 
         User user = new User();
         user.setEmail(email);
@@ -87,8 +88,6 @@ public class UserController {
         boolean result = userService.isLogin(user);
 
         if (result) {
-            //将email存入session
-            session.setAttribute("email", email);
             return "success";
         } else {
             return "fail";

@@ -3,6 +3,8 @@ package com.qfedu.entry;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 public class Course {
@@ -21,4 +23,6 @@ public class Course {
     private Integer typeId;
 
     private String courseShowImg;
+
+    private List<Course> courseList;
 }

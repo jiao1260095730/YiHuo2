@@ -1,5 +1,6 @@
 package com.qfedu.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.qfedu.entry.Course;
 import com.qfedu.entry.Label;
 import com.qfedu.mapper.CourseMapper;
@@ -38,5 +39,12 @@ public class CourseServiceImpl implements CourseService {
 
     public List<Course> selectGuessLikeCourseList() {
         return courseMapper.selectAllCourseOrderByIdDesc();
+    }
+
+
+    public List<Course> courseListAll(int page, int pageSize) {
+        PageHelper.startPage(1, 5);
+        List<Course> courseList = courseMapper.selectAllCourse();
+        return courseList;
     }
 }

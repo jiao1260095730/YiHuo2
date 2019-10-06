@@ -18,4 +18,8 @@ public interface CourseService {
     int getIdByCourseShowImg(Course course);
 
     List<Course> selectGuessLikeCourseList();
+
+
+
+    List<Course> courseListAll(int page, int pageSize);
 }

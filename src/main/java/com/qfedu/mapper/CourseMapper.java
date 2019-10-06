@@ -17,4 +17,8 @@ public interface CourseMapper {
     int getIdByCourseShowImg(Course course);
 
     List<Course> selectAllCourseOrderByIdDesc();
+
+
+
+
 }
