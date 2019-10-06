@@ -16,6 +16,8 @@ public class Course {
 
     private String buyNum;
 
+    private String meetImg;
+
     private Integer teacherId;
 
     private String labelId;

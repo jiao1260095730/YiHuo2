@@ -10,6 +10,7 @@
         <result column="course_desc" property="courseDesc" jdbcType="VARCHAR"/>
         <result column="buy_num" property="buyNum" jdbcType="VARCHAR"/>
         <result column="course_show_img" property="courseShowImg" jdbcType="VARCHAR"/>
+        <result column="meet_img" property="meetImg" jdbcType="VARCHAR"/>
         <result column="teacher_id" property="teacherId" jdbcType="INTEGER"/>
         <result column="label_id" property="labelId" jdbcType="VARCHAR"/>
         <result column="type_id" property="typeId" jdbcType="INTEGER"/>
