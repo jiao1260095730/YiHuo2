@@ -79,11 +79,12 @@ public class UserController {
             @ApiImplicitParam(name = "email", value = "邮箱", required = true, dataType = "String"),
             @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
     })
-    public String isLogin(@RequestBody String email,@RequestBody String password) {
+    @CrossOrigin(value = "*" , allowedHeaders = "*")
+    public String isLogin(@RequestBody User user) {
 
-        User user = new User();
+       /* User user = new User();
         user.setEmail(email);
-        user.setPassword(password);
+        user.setPassword(password);*/
 
         String tokenId = UUIDUtils.getUUID();
         user.setTokenId(tokenId);
@@ -91,10 +92,9 @@ public class UserController {
         boolean result = userService.isLogin(user);
 
         if (result) {
-            return "success";
             //将email存入session
             //session.setAttribute("email", email);
-            int count = userService.updateTokenId(user);
+            userService.updateTokenId(user);
             return tokenId;
         } else {
             return "fail";
