@@ -11,9 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -32,7 +30,7 @@ public class UserController {
      * @param email 从页面获取到的email
      * @return 以被注册返回 fail，表示该email不能使用，否则返回 success 表示该email可以使用
      */
-    @RequestMapping(value = "/verify", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/verify", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "该方法用来验证邮箱是否存在")
     public String verify(String email) {
@@ -44,19 +42,8 @@ public class UserController {
         return "success";
     }
 
-    @ApiOperation(value = "该方法是用户注册时发送验证码并保存至数据库")
-    @RequestMapping(value = "/validate", method = RequestMethod.POST)
-    @ResponseBody
-    public String validate(String email) {
-        int count = userService.validate(email);
-        if (count > 0) {
-            return "success";
-        }
-        return "fail";
-    }
-
     @ApiOperation(value = "该方法用于用户使用邮箱注册，输入邮箱，密码，验证码")
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/register", method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     @ApiImplicitParams({
             @ApiImplicitParam(name = "email", value = "邮箱", required = true, dataType = "String"),
@@ -64,9 +51,21 @@ public class UserController {
             @ApiImplicitParam(name = "validateNum", value = "验证码", required = true, dataType = "String")
     }
     )
-    public String register(User user) {
+    public String register(@RequestBody User user) {
+        System.out.println(user);
         int count = userService.register(user);
 
+        if (count > 0) {
+            return "success";
+        }
+        return "fail";
+    }
+
+    @ApiOperation(value = "该方法是用户注册时发送验证码并保存至数据库")
+    @RequestMapping(value = "/validate", method = RequestMethod.POST)
+    @ResponseBody
+    public String validate(String email) {
+        int count = userService.validate(email);
         if (count > 0) {
             return "success";
         }
@@ -209,6 +208,7 @@ public class UserController {
 
     /**
      * 完善个人资料
+     *
      * @param session 获取邮箱
      * @param user    实体User
      * @return 成功返回success ，失败返回 fail
@@ -235,7 +235,7 @@ public class UserController {
         return "fail";
     }
 
-    @RequestMapping(value = "/showUser", method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/showUser", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
     @ApiOperation(value = "根据用户的email展示用户的所有信息")
     @ApiImplicitParams({
@@ -256,24 +256,26 @@ public class UserController {
 
     /**
      * 退出登录
+     *
      * @param session 从页面的得到的邮箱账号
      * @return 返回登录初始页面，目前测试为success；
      */
     @RequestMapping(value = "/exit", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "退出登录")
-    public String login( HttpSession session) {
+    public String login(HttpSession session) {
         session.removeAttribute("email");
         return "success";
     }
 
     /**
      * 修改个人信息的真实资料
+     *
      * @param session 获取session中的email
-     * @param user 实体类user
+     * @param user    实体类user
      * @return 成功返回 success ，失败返回 fail
      */
-    @RequestMapping(value = "/updateRealMessage",method = RequestMethod.POST)
+    @RequestMapping(value = "/updateRealMessage", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "修改个人信息的真实资料")
     @ApiImplicitParams({
@@ -284,7 +286,7 @@ public class UserController {
             @ApiImplicitParam(name = "beGoodAt", value = "擅长领域", required = true, dataType = "String"),
             @ApiImplicitParam(name = "experience", value = "经历", required = true, dataType = "String")
     })
-    public String updateRealMessage(HttpSession session,User user) {
+    public String updateRealMessage(HttpSession session, User user) {
 
         user.setEmail((String) session.getAttribute("email"));
         int count = userService.updateRealMessage(user);
@@ -294,14 +296,14 @@ public class UserController {
         return "fail";
     }
 
-    @RequestMapping(value = "/userCollect",method = RequestMethod.POST)
+    @RequestMapping(value = "/userCollect", method = RequestMethod.POST)
     @ResponseBody
     @ApiOperation(value = "用来收藏课程")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "String"),
             @ApiImplicitParam(name = "courseId", value = "课程ID", required = true, dataType = "String")
     })
-    public String userCollect(HttpSession session,String courseId,User user) {
+    public String userCollect(HttpSession session, String courseId, User user) {
         String email = (String) session.getAttribute("email");
         int id = userService.selectUserIdByEmail(email);
         user.setId(id);
