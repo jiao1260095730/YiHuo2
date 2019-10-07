@@ -110,4 +110,8 @@
     <update id="updateNewPassword" parameterType="user">
         update user set password=#{newPassword} where token_id = #{tokenId}
     </update>
+
+    <select id="selectUserIdByTokenId" parameterType="int" resultType="int">
+        select id from user where token_id = #{tokenId}
+    </select>
 </mapper>

@@ -33,4 +33,6 @@ public interface UserService {
     int isRealPassword(User user);
 
     void updateNewPassword(User user);
+
+    int selectUserIdByTokenId(String tokenId);
 }

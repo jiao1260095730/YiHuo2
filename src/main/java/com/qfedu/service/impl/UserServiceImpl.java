@@ -92,4 +92,8 @@ public class UserServiceImpl implements UserService {
     public void updateNewPassword(User user) {
         userMapper.updateNewPassword(user);
     }
+
+    public int selectUserIdByTokenId(String tokenId) {
+        return userMapper.selectUserIdByTokenId(tokenId);
+    }
 }

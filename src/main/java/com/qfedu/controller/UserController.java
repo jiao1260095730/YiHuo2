@@ -283,13 +283,20 @@ public class UserController {
             @ApiImplicitParam(name = "tokenId", value = "token值", required = true, dataType = "String"),
             @ApiImplicitParam(name = "courseId", value = "课程ID", required = true, dataType = "String")
     })
-    public String userCollect(String courseId, @RequestBody User user) {
-
-        user.setCourseId(courseId);
+    public String userCollect(@RequestBody User user) {
+        String tokenId = user.getTokenId();
+        int userId = userService.selectUserIdByTokenId(tokenId);
+        user.setId(userId);
         int count = userService.addCourseIdUserId(user);
+        Data data = new Data();
+
         if (count > 0) {
-            return "success";
+            data.setCode(200);
+            data.setMsg("收藏成功");
+            return JsonUtils.objectToJson(data);
         }
-        return "fail";
+        data.setCode(400);
+        data.setMsg("收藏失败");
+        return JsonUtils.objectToJson(data);
     }
 }
