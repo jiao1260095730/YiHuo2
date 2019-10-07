@@ -13,7 +13,7 @@
         <result column="teacher_show_img" property="teacherShowImg" jdbcType="VARCHAR" />
     </resultMap>
 
-    <select id="selectTeachersByGrade" resultMap="teacherMap" parameterType="string">
-        select * from teacher where teacher_grade = #{grade}
+    <select id="selectTeachersByGrade" resultMap="teacherMap" parameterType="String">
+        select * from teacher where teacher_grade = #{teacherGrade}
     </select>
 </mapper>

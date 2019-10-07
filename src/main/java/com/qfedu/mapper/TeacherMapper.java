@@ -9,5 +9,5 @@ import java.util.List;
  * @date 2019/10/5 14:55
  */
 public interface TeacherMapper {
-    List<Teacher> selectTeachersByGrade(String grade);
+    List<Teacher> selectTeachersByGrade(String teacherGrade);
 }

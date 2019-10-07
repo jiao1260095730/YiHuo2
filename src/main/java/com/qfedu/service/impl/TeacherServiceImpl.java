@@ -17,7 +17,7 @@ public class TeacherServiceImpl implements TeacherService {
     @Autowired
     TeacherMapper teacherMapper;
 
-    public List<Teacher> selectTeachersByGrade(String grade) {
-        return teacherMapper.selectTeachersByGrade(grade);
+    public List<Teacher> selectTeachersByGrade(String teacherGrade) {
+        return teacherMapper.selectTeachersByGrade(teacherGrade);
     }
 }

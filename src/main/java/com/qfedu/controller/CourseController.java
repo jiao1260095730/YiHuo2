@@ -13,6 +13,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -82,10 +83,10 @@ public class CourseController {
     @ResponseBody
     @ApiOperation(value = "首页 “艺伙名师集” 需要的老师数据")
     @ApiImplicitParam(name = "grade",value = "根据老师不同的级别，前端传回不同的grade的id，返回相应级别的老师数据",
-            required = true,dataType = "String")
-    public String showTeacherListOnHomePage(String grade) {
+            required = true,dataType = "int")
+    public String showTeacherListOnHomePage( String teacherGrade) {
 
-        List<Teacher> teacherList = teacherService.selectTeachersByGrade(grade);
+        List<Teacher> teacherList = teacherService.selectTeachersByGrade(teacherGrade);
         return JsonUtils.objectToJson(teacherList);
     }
 }
