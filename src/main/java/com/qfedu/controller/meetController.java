@@ -55,13 +55,4 @@ public class meetController {
        return JsonUtils.objectToJson(course);
    }
 
-   //@RequestMapping(value = "/showCourseImg", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
-   //@ResponseBody
-   //@ApiOperation(value = "该方法用来展示遇见中的图片")
-   //@ApiImplicitParam(name = "id", value = "想要查找的id", required = true, dataType = "Integer")
-   //public String showCourseImg(HttpSession session, Course course) {
-   //    int id = courseService.getIdByCourseShowImg(course);
-   //    return "success";
-   //}
-
 }

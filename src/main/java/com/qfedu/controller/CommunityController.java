@@ -33,7 +33,7 @@ public class CommunityController {
 
     @RequestMapping(value = "/focusCommunity", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     @ResponseBody
-    @ApiOperation(value = "社区关注老师信息展示")
+    @ApiOperation(value = "社区关注老师信息展示",notes = "展示所有的关注老师信息")
     public String focusCommunity() {
        List<Teacher> teacherList  = communityService.selectTeacher();
         return JsonUtils.objectToJson(teacherList);

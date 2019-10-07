@@ -110,6 +110,7 @@ public class UserController {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "email", value = "邮箱", required = true, dataType = "String")
     })
+    @CrossOrigin(value = "*", allowedHeaders = "*")
     public String validate(@RequestBody User user) {
         int count = userService.validate(user);
         Data data = new Data();
