@@ -10,7 +10,7 @@ public class Teacher {
 
     private String teacherName;
 
-    private String teacherGrade;
+    private int teacherGrade;
 
     private String teacherUnit;
 

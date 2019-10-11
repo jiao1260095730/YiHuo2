@@ -9,5 +9,5 @@ import java.util.List;
  * @date 2019/10/5 14:53
  */
 public interface TeacherService {
-    List<Teacher> selectTeachersByGrade(String teacherGrade);
+    List<Teacher> selectTeachersByGrade(int teacherGrade);
 }

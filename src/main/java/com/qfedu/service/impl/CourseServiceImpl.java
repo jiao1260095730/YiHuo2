@@ -21,7 +21,7 @@ public class CourseServiceImpl implements CourseService {
         return courseMapper.selectAllCourse();
     }
 
-    public Course getCourseById(Integer id) {
+    public Course getCourseById(String id) {
         return courseMapper.getCourseById(id);
     }
 

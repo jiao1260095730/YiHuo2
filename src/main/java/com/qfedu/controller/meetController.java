@@ -48,9 +48,9 @@ public class meetController {
    @RequestMapping(value = "/showOneCourse", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
    @ResponseBody
    @ApiOperation(value = "开始画功能",notes = "根据所给的视频封面从前端获取ID，传入后台，进入相应视频课程页面")
-   @ApiImplicitParam(name = "id", value = "想要查找的id", required = true, dataType = "Integer")
+   @ApiImplicitParam(name = "id", value = "想要查找的id", required = true, dataType = "int")
 
-   public String showOneCourse(Integer id) {
+   public String showOneCourse(String id) {
        Course course = courseService.getCourseById(id);
        return JsonUtils.objectToJson(course);
    }
